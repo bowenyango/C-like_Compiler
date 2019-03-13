@@ -5,9 +5,7 @@ The final completed project is in 9_Final folder.
 The grammar that can be analyzed is as follows：
 
 ＜加法运算符＞ ::= +｜-
-
 ＜乘法运算符＞  ::= *｜/
-
 ＜关系运算符＞  ::=  <｜<=｜>｜>=｜!=｜==
 ＜字母＞   ::= ＿｜a｜．．．｜z｜A｜．．．｜Z
 ＜数字＞   ::= ０｜１｜．．．｜９

@@ -1,0 +1,15 @@
+﻿  C0_Compiler.cpp
+  grammar_analysis.cpp
+c:\compiler\c0_compiler\c0_compiler\grammar_analysis.cpp(15): warning C4101: “temp_sym_type”: 未引用的局部变量
+c:\compiler\c0_compiler\c0_compiler\grammar_analysis.cpp(14): warning C4101: “temp_ret_type”: 未引用的局部变量
+  main.cpp
+  mid_code.cpp
+  object_code.cpp
+  symbol_table.cpp
+  token_analysis.cpp
+c:\compiler\c0_compiler\c0_compiler\token_analysis.cpp(425): warning C4101: “temp”: 未引用的局部变量
+  正在生成代码...
+c:\compiler\c0_compiler\c0_compiler\grammar_analysis.cpp(81): warning C4715: “C0_Compiler::type_ident”: 不是所有的控件路径都返回值
+c:\compiler\c0_compiler\c0_compiler\grammar_analysis.cpp(92): warning C4715: “C0_Compiler::ident”: 不是所有的控件路径都返回值
+c:\compiler\c0_compiler\c0_compiler\grammar_analysis.cpp(1196): warning C4715: “C0_Compiler::const_value”: 不是所有的控件路径都返回值
+  C0_Compiler.vcxproj -> C:\Compiler\C0_Compiler\Debug\C0_Compiler.exe

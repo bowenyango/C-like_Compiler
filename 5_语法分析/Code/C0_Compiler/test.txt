@@ -1,0 +1,125 @@
+CONST int max_value_limit = 100; 
+const int min_value_limit = -100; 
+const int max_bounds_limit = 10;
+const int min_bounds_limit = 0;
+
+int i;
+
+INT returnYear{ 
+    return (2018);
+}
+
+int add(int x, int y){ 
+    return (+ x + y); 
+}
+
+int gauss_sum(int x, int y){ 
+    const int err_max_value_limit = 1;
+    const int err_min_value_limit = 2;
+    const int err_invalid_input = 5;
+
+    if(x > y) 
+        error(err_invalid_input);
+    else
+        if(y > max_value_limit)
+            error(err_max_value_limit);
+        else
+            if(x < min_value_limit)
+                error(err_min_value_limit);
+            else
+                if(x - y)
+                    return (add(x, gauss_sum(x + 1, y)));
+                else
+                    return (x);
+}
+
+void error(int err_typ){ 
+    switch(err_typ){ 
+    case 1: 
+        printf("Max value limit.");
+    case 2:
+        printf("Min value limit.");
+    default: 
+        printf("Error Type Not Define.");
+    }
+
+    return;
+}
+
+void warning{ 
+    printf("The Program below is not clear."); 
+    return; 
+}
+
+char returnC{
+	return ('C');
+}
+
+char output(char input){
+	printf(input);
+	return (input);
+}
+
+void test{
+    int int_test;
+    char char_test;
+    int _abcdefghijklmnopqrstuvwxyz0123456789; 
+    char letters[2]; 
+
+    int_test = 1*2; 
+    int_test = 4/2; 
+    int_test = 0;
+    int_test = +1234; 
+    int_test = -5678;
+    char_test = 'a';
+    CHAR_TEST = 'A';
+    letters[0] = '1'; 
+    letters[1] = '-';
+    letters[2] = 'n';
+    ; 
+
+    printf(letters); 
+    printf(letters[0]); 
+}
+
+
+
+void main() 
+{
+    int x,y;
+    char input;
+    char C;
+    int result[100]; 
+
+    scanf(x,y); 
+    scanf(input);
+
+    i = 0;
+
+    do
+        result[i] = gauss_sum(x,y); 
+    while(0)
+
+    i = 0;
+    do{
+        result[i] = gauss_sum(x + i, y); 
+        i = i + 1;
+    }while(i < y - x)
+
+    printf("X = ", X); 
+    printf("Y = ", Y);
+    printf("X sum to Y = ");
+    printf(result[0]);
+    printf(input);
+
+    printf("It's already ", returnYear);
+
+    {;}
+    {;{;};}
+
+
+    C = output(input);
+    C = returnC;
+    warning; 
+    test;
+}

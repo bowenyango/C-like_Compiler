@@ -1,0 +1,304 @@
+init returnyear
+#RET = 2018 + 0
+GOTO returnyear@end
+init add
+$t0 = x + y
+GOTO add@end
+init error
+$t1 = 1 + 0
+If err_typ != $t1
+    Then Goto Label1
+printf string 0 
+GOTO Label0
+Label1:
+$t2 = 2 + 0
+If err_typ != $t2
+    Then Goto Label2
+printf string 1 
+GOTO Label0
+Label2:
+$t3 = 3 + 0
+If err_typ != $t3
+    Then Goto Label4
+printf string 2 
+GOTO Label3
+Label4:
+printf string 3 
+Label3:
+Label0:
+$t4 = error_number + 1
+GOTO error@end
+init cumulative_sum
+If x > y
+    Then Goto Label5
+push 3
+call error
+GOTO Label6
+Label5:
+If y > 100
+    Then Goto Label7
+push 1
+call error
+GOTO Label8
+Label7:
+If x < -100
+    Then Goto Label9
+push 2
+call error
+GOTO Label10
+Label9:
+$t5 = x - y
+If $t5 == 0
+    Then Goto Label11
+push x
+$t6 = x + 1
+push $t6
+push y
+call cumulative_sum
+$t7 = #RET + 0
+push $t7
+call add
+$t8 = #RET + 0
+GOTO cumulative_sum@end
+GOTO Label12
+Label11:
+#RET = x + 0
+GOTO cumulative_sum@end
+Label12:
+Label10:
+Label8:
+Label6:
+init returnc
+If void_index < 5
+    Then Goto Label13
+$t9 = void_index + 1
+call returnc
+$t10 = #RET + 0
+GOTO returnc@end
+GOTO Label14
+Label13:
+#RET = 67 + 0
+GOTO returnc@end
+Label14:
+init output
+Label15:
+printf string 4 
+printf char input 
+#RET = input + 0
+GOTO output@end
+If 1 == 0
+    Then Goto Label15
+GOTO Label15
+Label16:
+init register_disaster
+$t11 = t1 + t2
+$t11 = $t11 + t3
+$t11 = $t11 + t4
+$t11 = $t11 + t5
+$t11 = $t11 + t6
+$t11 = $t11 + t7
+$t11 = $t11 + t8
+$t11 = $t11 + t9
+$t11 = $t11 + t10
+$t11 = $t11 + t11
+$t11 = $t11 + t12
+GOTO register_disaster@end
+init warning
+init test
+letters[0] = 49
+letters[1] = 50
+letters[2] = 97
+$t12 = letters[0]
+$t13 = letters[1]
+$t12 = $t12 + $t13
+$t14 = letters[2]
+$t12 = $t12 + $t14
+$t15 = int_test + int_test
+$t15 = $t15 + int_test
+$t16 = int_test * int_test
+$t15 = $t15 - $t16
+$t17 = 65 + 0
+If char_test != $t17
+    Then Goto Label18
+Label19:
+$t18 = 131 + char_test
+$t19 = letters[1]
+$t18 = $t18 + $t19
+$t20 = letters[0]
+$t18 = $t18 - $t20
+$t21 = letters[2]
+$t18 = $t18 - $t21
+$t22 = i * 1
+$t18 = $t18 + $t22
+$t18 = $t18 + 0
+$t23 = i - 1
+If i >= 0
+    Then Goto Label19
+GOTO Label19
+Label20:
+GOTO Label17
+Label18:
+$t24 = 97 + 0
+If char_test != $t24
+    Then Goto Label21
+$t25 = 221 + char_test
+$t26 = letters[1]
+$t25 = $t25 + $t26
+$t27 = letters[0]
+$t25 = $t25 - $t27
+$t28 = letters[2]
+$t25 = $t25 - $t28
+$t29 = i * 1
+$t25 = $t25 + $t29
+GOTO Label17
+Label21:
+Label17:
+printf string 5 
+printf string 6 
+printf int int_test 
+Label22:
+If i >= 5
+    Then Goto Label24
+$t30 = 10 + 0
+If i != $t30
+    Then Goto Label27
+GOTO Label26
+Label27:
+$t31 = 57 + 0
+If i != $t31
+    Then Goto Label28
+GOTO Label26
+Label28:
+$t32 = 8 + 0
+If i != $t32
+    Then Goto Label29
+GOTO Label26
+Label29:
+$t33 = 55 + 0
+If i != $t33
+    Then Goto Label30
+GOTO Label26
+Label30:
+$t34 = 6 + 0
+If i != $t34
+    Then Goto Label31
+GOTO Label26
+Label31:
+Label26:
+GOTO Label25
+Label24:
+$t35 = 2 * i
+$t35 = $t35 / 2
+$t35 = $t35 + 48
+$t35 = $t35 - 0
+$t36 = 0 + 0
+If $t35 != $t36
+    Then Goto Label33
+GOTO Label32
+Label33:
+$t37 = 48 + 0
+If $t35 != $t37
+    Then Goto Label34
+GOTO Label32
+Label34:
+Label32:
+Label25:
+$t38 = i - 1
+If i >= 0
+    Then Goto Label22
+GOTO Label22
+Label23:
+push char_test
+call output
+push 4
+call error
+printf string 7 
+scanf int x 
+scanf int y 
+printf string 8 
+scanf char input 
+Label35:
+$t39 = i * 1
+$t39 = $t39 - 1
+$t39 = $t39 + 1
+push x
+push y
+call cumulative_sum
+$t40 = #RET + 0
+result[$t39] = $t40
+If 0 == 0
+    Then Goto Label35
+GOTO Label35
+Label36:
+Label37:
+result[i] = i
+$t41 = i + 1
+$t42 = y - x
+If i < $t42
+    Then Goto Label37
+GOTO Label37
+Label38:
+If x >= -100
+    Then Goto Label39
+If y <= 100
+    Then Goto Label41
+If x <= y
+    Then Goto Label43
+printf string 9 
+$t43 = result[0]
+printf int $t43 
+GOTO Label44
+Label43:
+Label44:
+GOTO Label42
+Label41:
+Label42:
+GOTO Label40
+Label39:
+Label40:
+printf string 10 
+call returnyear
+$t44 = #RET + 0
+printf int $t44 
+push input
+call output
+$t45 = #RET + 0
+If c == 99
+    Then Goto Label45
+printf string 11 
+printf int t1 
+GOTO Label46
+Label45:
+printf string 12 
+printf int t2 
+Label46:
+call returnc
+$t46 = #RET + 0
+$t47 = c + 0
+If $t47 == 67
+    Then Goto Label47
+printf string 13 
+GOTO Label48
+Label47:
+printf string 14 
+Label48:
+call warning
+call test
+printf string 15 
+printf int i 
+printf string 16 
+push 0
+push 0
+push 0
+push 0
+push 0
+push 0
+push 0
+push 0
+push 0
+push 0
+push 0
+push 0
+call register_disaster
+$t48 = #RET + 0
+printf int $t48

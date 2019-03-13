@@ -1,0 +1,109 @@
+//标识符不区分大小写
+
+const int max_value_limit = 100; //覆盖程序
+const int min_value_limit = -100; //覆盖常量定义
+const int max_bounds_limit = 10;
+const int min_bounds_limit = 0;
+
+int i; //覆盖变量定义
+
+int returnYear{ //覆盖有返回无参数函数
+    return 2018;
+}
+
+int add(int x, int y){ // 覆盖有返回有参数函数、参数表
+    return (+ x + y); //覆盖表达式
+}
+
+int gauss_sum(int x, int y){ //覆盖递归调用
+    const int err_max_value_limit = 1;
+    const int err_min_value_limit = 2;
+    const int err_invalid_input = 5;
+
+    if(x > y) //覆盖条件语句
+        error(err_invalid_input);
+    else
+        if(y > max_value_limit)
+            error(err_max_value_limit);
+        else
+            if(x < min_value_limit)
+                error(err_min_value_limit);
+            else
+                if(x - y)
+                    return (add(x, gauss_sum(x + 1, y)));
+                else
+                    return (x);
+}
+
+void error(int err_typ){ //覆盖无返回有参数函数
+    switch(err_typ){ //覆盖条件语句
+    case 1: //覆盖常量、情况子语句、情况表
+        printf("Max value limit.");
+    case 2:
+        printf("Min value limit.");
+//    case 3:
+//        printf("Max array bounds limit.");
+//    case 4:
+//        printf("Min array bounds limit.");
+    default: //覆盖缺省
+        printf("Error Type Not Define.");
+    }
+
+    return;
+}
+
+void warning{ //覆盖无返回无参数函数
+    printf("The Program below is not clear."); //覆盖字符串
+    return; //覆盖返回语句
+}
+
+void test{//为了全覆盖，无实际意义
+    int int_test;
+    char char_test;
+    int _abcdefghijklmnopqrstuvwxyz0123456789; //覆盖标识符
+    char letters[2]; //覆盖字符串
+
+    int_test = 1*2; //覆盖乘法
+    int_test = 4/2; //覆盖除法
+    int_test = 0;
+    int_test = +1234; //覆盖有符号整数
+    int_test = -5678;
+    char_test = 'a';
+    CHAR_TEST = 'A';
+    letters[0] = '1'; //覆盖字符串赋值
+    letters[1] = '\';
+    letters[2] = 'n';
+    ; //覆盖空语句
+
+    printf(letters); //应该输出1\n
+    printf(letters[0]); //应该输出字符1
+}
+
+void main() //覆盖主函数、语句列、符合语句
+{
+    int x,y;
+    int result[100]; //覆盖数组
+
+    scanf(x,y); //读取两个数字，覆盖读语句
+    i = 0;
+
+    do
+        result[i] = gauss_sum(x,y); //覆盖循环、覆盖函数调用、赋值语句
+    while(0)
+
+    i = 0;
+    do{
+        result[i] = gauss_sum(x + i, y); //才发现语句可以为{语句列}，增加更好一点的循环覆盖
+        i = i + 1;
+    }while(i < y - x)
+
+    printf("X = ", X); //覆盖写语句
+    printf("Y = ", Y);
+    printf("X sum to Y = ");
+    printf(result[0]);
+
+    printf("It's already ", returnYear);
+
+    warning; //下面为了覆盖
+    test;
+}

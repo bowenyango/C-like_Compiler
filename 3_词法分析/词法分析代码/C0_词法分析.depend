@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1542194001 source:c:\users\yang\desktop\随手代码集\c0_词法分析\main.cpp
+	<iostream>
+	<fstream>
+	"C0_Compiler.h"
+
+1542193189 c:\users\yang\desktop\随手代码集\c0_词法分析\token_define.h
+	<iostream>
+
+1542196515 c:\users\yang\desktop\随手代码集\c0_词法分析\c0_compiler.h
+	<iostream>
+	<fstream>
+	"token_define.h"
+	"error_define.h"
+	<string.h>
+	<algorithm>
+
+1542197524 source:c:\users\yang\desktop\随手代码集\c0_词法分析\token_analysis.cpp
+	"C0_Compiler.h"
+	<iostream>
+
+1542170162 source:c:\users\yang\desktop\随手代码集\c0_词法分析\c0_compiler.h
+	<iostream>
+	<fstream>
+	"token_define.h"
+
+1542170146 source:c:\users\yang\desktop\随手代码集\c0_词法分析\token_define.h
+	<iostream>
+
+1542195970 source:c:\users\yang\desktop\随手代码集\c0_词法分析\c0_compiler.cpp
+	"C0_Compiler.h"
+
+1542197385 c:\users\yang\desktop\随手代码集\c0_词法分析\error_define.h
+
+1542195970 source:c:\users\yang\desktop\18大三上\编译原理\3_词法分析\15071054_杨伯文_词法分析\15071054_杨伯文_词法分析代码\c0_compiler.cpp
+	"C0_Compiler.h"
+
+1542196515 c:\users\yang\desktop\18大三上\编译原理\3_词法分析\15071054_杨伯文_词法分析\15071054_杨伯文_词法分析代码\c0_compiler.h
+	<iostream>
+	<fstream>
+	"token_define.h"
+	"error_define.h"
+	<string.h>
+	<algorithm>
+
+1542193189 c:\users\yang\desktop\18大三上\编译原理\3_词法分析\15071054_杨伯文_词法分析\15071054_杨伯文_词法分析代码\token_define.h
+	<iostream>
+
+1542197385 c:\users\yang\desktop\18大三上\编译原理\3_词法分析\15071054_杨伯文_词法分析\15071054_杨伯文_词法分析代码\error_define.h
+
+1542194001 source:c:\users\yang\desktop\18大三上\编译原理\3_词法分析\15071054_杨伯文_词法分析\15071054_杨伯文_词法分析代码\main.cpp
+	<iostream>
+	<fstream>
+	"C0_Compiler.h"
+
+1542208940 source:c:\users\yang\desktop\18大三上\编译原理\3_词法分析\15071054_杨伯文_词法分析\15071054_杨伯文_词法分析代码\token_analysis.cpp
+	"C0_Compiler.h"
+	<iostream>
+

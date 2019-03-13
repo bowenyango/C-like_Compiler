@@ -1,0 +1,3 @@
+﻿  object_code.cpp
+c:\compiler\c0_compiler\c0_compiler\object_code.cpp(123): warning C4715: “C0_Compiler::find_symbol”: 不是所有的控件路径都返回值
+  C0_Compiler.vcxproj -> C:\Compiler\C0_Compiler\Debug\C0_Compiler.exe

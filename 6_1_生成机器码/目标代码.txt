@@ -1,0 +1,987 @@
+	.data
+	$Message0:.asciiz"Max value limit."
+	$Message1:.asciiz"Min value limit."
+	$Message2:.asciiz"Invalid Input."
+	$Message3:.asciiz"Error Type Not Define."
+	$Message4:.asciiz"Letter is "
+	$Message5:.asciiz"Please Input Lower Bound and Upper Bound:"
+	$Message6:.asciiz"Please Input A Char:"
+	$Message7:.asciiz"X sum to Y = "
+	$Message8:.asciiz"It's already "
+	$Message9:.asciiz"It is Lower c."
+	$Message10:.asciiz"It is not Lower c"
+	$Message11:.asciiz"\tReturnC is Upper C.\n"
+	$Message12:.asciiz"ReturnC is not Upper C"
+	$Message13:.asciiz"Final i = "
+	$Message14:.asciiz"Register_Disater = "
+	.text
+	add	$fp	,	$sp	,	$zero
+	addi	$gp	,	$gp	,	65536
+	j	main
+	nop
+returnyear:
+	sw	$t0	,	0($sp)
+	sw	$t1	,	-4($sp)
+	sw	$t2	,	-8($sp)
+	sw	$t3	,	-12($sp)
+	sw	$t4	,	-16($sp)
+	sw	$t5	,	-20($sp)
+	sw	$t6	,	-24($sp)
+	sw	$s0	,	-28($sp)
+	sw	$s1	,	-32($sp)
+	sw	$s2	,	-36($sp)
+	sw	$s3	,	-40($sp)
+	sw	$s4	,	-44($sp)
+	sw	$s5	,	-48($sp)
+	sw	$s6	,	-52($sp)
+	sw	$fp	,	-56($sp)
+	sw	$ra	,	-60($sp)
+	add	$fp	,	$sp	,	$zero
+	addi	$sp	,	$sp	,	-64
+	li	$v0	,	2018
+	j	returnyear$end
+	nop
+returnyear$end:
+	lw	$ra	,	4($sp)
+	lw	$fp	,	8($sp)
+	lw	$s6	,	12($sp)
+	lw	$s5	,	16($sp)
+	lw	$s4	,	20($sp)
+	lw	$s3	,	24($sp)
+	lw	$s2	,	28($sp)
+	lw	$s1	,	32($sp)
+	lw	$s0	,	36($sp)
+	lw	$t6	,	40($sp)
+	lw	$t5	,	44($sp)
+	lw	$t4	,	48($sp)
+	lw	$t3	,	52($sp)
+	lw	$t2	,	56($sp)
+	lw	$t1	,	60($sp)
+	lw	$t0	,	64($sp)
+	addi	$sp	,	$sp	,	64
+	jr	$ra
+	nop
+add:
+	addi	$sp	,	$sp	,	8
+	sw	$t0	,	-12($sp)
+	sw	$t1	,	-16($sp)
+	sw	$t2	,	-20($sp)
+	sw	$t3	,	-24($sp)
+	sw	$t4	,	-28($sp)
+	sw	$t5	,	-32($sp)
+	sw	$t6	,	-36($sp)
+	sw	$s0	,	-40($sp)
+	sw	$s1	,	-44($sp)
+	sw	$s2	,	-48($sp)
+	sw	$s3	,	-52($sp)
+	sw	$s4	,	-56($sp)
+	sw	$s5	,	-60($sp)
+	sw	$s6	,	-64($sp)
+	sw	$fp	,	-68($sp)
+	sw	$ra	,	-72($sp)
+	add	$fp	,	$sp	,	$zero
+	addi	$sp	,	$sp	,	-76
+	lw	$t9	,	0($fp)
+	lw	$t8	,	-4($fp)
+	add	$v0	,	$t9	,	$t8
+	j	add$end
+	nop
+add$end:
+	lw	$ra	,	4($sp)
+	lw	$fp	,	8($sp)
+	lw	$s6	,	12($sp)
+	lw	$s5	,	16($sp)
+	lw	$s4	,	20($sp)
+	lw	$s3	,	24($sp)
+	lw	$s2	,	28($sp)
+	lw	$s1	,	32($sp)
+	lw	$s0	,	36($sp)
+	lw	$t6	,	40($sp)
+	lw	$t5	,	44($sp)
+	lw	$t4	,	48($sp)
+	lw	$t3	,	52($sp)
+	lw	$t2	,	56($sp)
+	lw	$t1	,	60($sp)
+	lw	$t0	,	64($sp)
+	addi	$sp	,	$sp	,	76
+	jr	$ra
+	nop
+error:
+	addi	$sp	,	$sp	,	4
+	sw	$t0	,	-20($sp)
+	sw	$t1	,	-24($sp)
+	sw	$t2	,	-28($sp)
+	sw	$t3	,	-32($sp)
+	sw	$t4	,	-36($sp)
+	sw	$t5	,	-40($sp)
+	sw	$t6	,	-44($sp)
+	sw	$s0	,	-48($sp)
+	sw	$s1	,	-52($sp)
+	sw	$s2	,	-56($sp)
+	sw	$s3	,	-60($sp)
+	sw	$s4	,	-64($sp)
+	sw	$s5	,	-68($sp)
+	sw	$s6	,	-72($sp)
+	sw	$fp	,	-76($sp)
+	sw	$ra	,	-80($sp)
+	add	$fp	,	$sp	,	$zero
+	addi	$sp	,	$sp	,	-84
+	li	$t7	,	1
+	sw	$t7	,	-4($fp)
+	lw	$t9	,	-4($fp)
+	lw	$t8	,	0($fp)
+	bne	$t9	,	$t8	,	$label1
+	nop
+	li	$v0	,	4
+	la	$a0	,	$Message0
+	syscall
+	j	$label0
+	nop
+$label1:
+	li	$t7	,	2
+	sw	$t7	,	-8($fp)
+	lw	$t9	,	-8($fp)
+	lw	$t8	,	0($fp)
+	bne	$t9	,	$t8	,	$label2
+	nop
+	li	$v0	,	4
+	la	$a0	,	$Message1
+	syscall
+	j	$label0
+	nop
+$label2:
+	li	$t7	,	3
+	sw	$t7	,	-12($fp)
+	lw	$t9	,	-12($fp)
+	lw	$t8	,	0($fp)
+	bne	$t9	,	$t8	,	$label4
+	nop
+	li	$v0	,	4
+	la	$a0	,	$Message2
+	syscall
+	j	$label3
+	nop
+$label4:
+	li	$v0	,	4
+	la	$a0	,	$Message3
+	syscall
+$label3:
+$label0:
+	lw	$t9	,	20($gp)
+	addi	$t7	,	$t9	,	1
+	sw	$t7	,	20($gp)
+	j	error$end
+	nop
+error$end:
+	lw	$ra	,	4($sp)
+	lw	$fp	,	8($sp)
+	lw	$s6	,	12($sp)
+	lw	$s5	,	16($sp)
+	lw	$s4	,	20($sp)
+	lw	$s3	,	24($sp)
+	lw	$s2	,	28($sp)
+	lw	$s1	,	32($sp)
+	lw	$s0	,	36($sp)
+	lw	$t6	,	40($sp)
+	lw	$t5	,	44($sp)
+	lw	$t4	,	48($sp)
+	lw	$t3	,	52($sp)
+	lw	$t2	,	56($sp)
+	lw	$t1	,	60($sp)
+	lw	$t0	,	64($sp)
+	addi	$sp	,	$sp	,	84
+	jr	$ra
+	nop
+cumulative_sum:
+	addi	$sp	,	$sp	,	8
+	sw	$t0	,	-36($sp)
+	sw	$t1	,	-40($sp)
+	sw	$t2	,	-44($sp)
+	sw	$t3	,	-48($sp)
+	sw	$t4	,	-52($sp)
+	sw	$t5	,	-56($sp)
+	sw	$t6	,	-60($sp)
+	sw	$s0	,	-64($sp)
+	sw	$s1	,	-68($sp)
+	sw	$s2	,	-72($sp)
+	sw	$s3	,	-76($sp)
+	sw	$s4	,	-80($sp)
+	sw	$s5	,	-84($sp)
+	sw	$s6	,	-88($sp)
+	sw	$fp	,	-92($sp)
+	sw	$ra	,	-96($sp)
+	add	$fp	,	$sp	,	$zero
+	addi	$sp	,	$sp	,	-100
+	lw	$t9	,	0($fp)
+	lw	$t8	,	-4($fp)
+	sub	$t7	,	$t9	,	$t8
+	blez	$t7	,	$label5
+	nop
+	li	$t7	,	3
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	jal	error
+	nop
+	j	$label6
+	nop
+$label5:
+	lw	$t9	,	-4($fp)
+	subi	$t7	,	$t9	,	100
+	blez	$t7	,	$label7
+	nop
+	li	$t7	,	1
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	jal	error
+	nop
+	j	$label8
+	nop
+$label7:
+	lw	$t9	,	0($fp)
+	subi	$t7	,	$t9	,	-100
+	bgez	$t7	,	$label9
+	nop
+	li	$t7	,	2
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	jal	error
+	nop
+	j	$label10
+	nop
+$label9:
+	lw	$t9	,	0($fp)
+	lw	$t8	,	-4($fp)
+	sub	$t7	,	$t9	,	$t8
+	sw	$t7	,	-20($fp)
+	lw	$t9	,	-20($fp)
+	beq	$t9	,	$zero	,	$label11
+	nop
+	lw	$t7	,	0($fp)
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	lw	$t9	,	0($fp)
+	addi	$t7	,	$t9	,	1
+	sw	$t7	,	-24($fp)
+	lw	$t7	,	-24($fp)
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	lw	$t7	,	-4($fp)
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	jal	cumulative_sum
+	nop
+	addi	$t7	,	$v0	,	0
+	sw	$t7	,	-28($fp)
+	lw	$t7	,	-28($fp)
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	jal	add
+	nop
+	addi	$v0	,	$v0	,	0
+	j	cumulative_sum$end
+	nop
+	j	$label12
+	nop
+$label11:
+	lw	$t9	,	0($fp)
+	addi	$v0	,	$t9	,	0
+	j	cumulative_sum$end
+	nop
+$label12:
+$label10:
+$label8:
+$label6:
+cumulative_sum$end:
+	lw	$ra	,	4($sp)
+	lw	$fp	,	8($sp)
+	lw	$s6	,	12($sp)
+	lw	$s5	,	16($sp)
+	lw	$s4	,	20($sp)
+	lw	$s3	,	24($sp)
+	lw	$s2	,	28($sp)
+	lw	$s1	,	32($sp)
+	lw	$s0	,	36($sp)
+	lw	$t6	,	40($sp)
+	lw	$t5	,	44($sp)
+	lw	$t4	,	48($sp)
+	lw	$t3	,	52($sp)
+	lw	$t2	,	56($sp)
+	lw	$t1	,	60($sp)
+	lw	$t0	,	64($sp)
+	addi	$sp	,	$sp	,	100
+	jr	$ra
+	nop
+returnc:
+	sw	$t0	,	-8($sp)
+	sw	$t1	,	-12($sp)
+	sw	$t2	,	-16($sp)
+	sw	$t3	,	-20($sp)
+	sw	$t4	,	-24($sp)
+	sw	$t5	,	-28($sp)
+	sw	$t6	,	-32($sp)
+	sw	$s0	,	-36($sp)
+	sw	$s1	,	-40($sp)
+	sw	$s2	,	-44($sp)
+	sw	$s3	,	-48($sp)
+	sw	$s4	,	-52($sp)
+	sw	$s5	,	-56($sp)
+	sw	$s6	,	-60($sp)
+	sw	$fp	,	-64($sp)
+	sw	$ra	,	-68($sp)
+	add	$fp	,	$sp	,	$zero
+	addi	$sp	,	$sp	,	-72
+	lw	$t9	,	24($gp)
+	subi	$t7	,	$t9	,	5
+	bgez	$t7	,	$label13
+	nop
+	lw	$t9	,	24($gp)
+	addi	$t7	,	$t9	,	1
+	sw	$t7	,	24($gp)
+	jal	returnc
+	nop
+	addi	$v0	,	$v0	,	0
+	j	returnc$end
+	nop
+	j	$label14
+	nop
+$label13:
+	li	$v0	,	67
+	j	returnc$end
+	nop
+$label14:
+returnc$end:
+	lw	$ra	,	4($sp)
+	lw	$fp	,	8($sp)
+	lw	$s6	,	12($sp)
+	lw	$s5	,	16($sp)
+	lw	$s4	,	20($sp)
+	lw	$s3	,	24($sp)
+	lw	$s2	,	28($sp)
+	lw	$s1	,	32($sp)
+	lw	$s0	,	36($sp)
+	lw	$t6	,	40($sp)
+	lw	$t5	,	44($sp)
+	lw	$t4	,	48($sp)
+	lw	$t3	,	52($sp)
+	lw	$t2	,	56($sp)
+	lw	$t1	,	60($sp)
+	lw	$t0	,	64($sp)
+	addi	$sp	,	$sp	,	72
+	jr	$ra
+	nop
+output:
+	addi	$sp	,	$sp	,	4
+	sw	$t0	,	-4($sp)
+	sw	$t1	,	-8($sp)
+	sw	$t2	,	-12($sp)
+	sw	$t3	,	-16($sp)
+	sw	$t4	,	-20($sp)
+	sw	$t5	,	-24($sp)
+	sw	$t6	,	-28($sp)
+	sw	$s0	,	-32($sp)
+	sw	$s1	,	-36($sp)
+	sw	$s2	,	-40($sp)
+	sw	$s3	,	-44($sp)
+	sw	$s4	,	-48($sp)
+	sw	$s5	,	-52($sp)
+	sw	$s6	,	-56($sp)
+	sw	$fp	,	-60($sp)
+	sw	$ra	,	-64($sp)
+	add	$fp	,	$sp	,	$zero
+	addi	$sp	,	$sp	,	-68
+$label15:
+	li	$t9	,	1
+	beq	$t9	,	$zero	,	$label16
+	nop
+	li	$v0	,	4
+	la	$a0	,	$Message4
+	syscall
+	li	$v0	,	11
+	lw	$t7	,	0($fp)
+	add	$a0	,	$t7	,	$zero
+	syscall
+	lw	$t9	,	0($fp)
+	addi	$v0	,	$t9	,	0
+	j	output$end
+	nop
+	j	$label15
+	nop
+$label16:
+output$end:
+	lw	$ra	,	4($sp)
+	lw	$fp	,	8($sp)
+	lw	$s6	,	12($sp)
+	lw	$s5	,	16($sp)
+	lw	$s4	,	20($sp)
+	lw	$s3	,	24($sp)
+	lw	$s2	,	28($sp)
+	lw	$s1	,	32($sp)
+	lw	$s0	,	36($sp)
+	lw	$t6	,	40($sp)
+	lw	$t5	,	44($sp)
+	lw	$t4	,	48($sp)
+	lw	$t3	,	52($sp)
+	lw	$t2	,	56($sp)
+	lw	$t1	,	60($sp)
+	lw	$t0	,	64($sp)
+	addi	$sp	,	$sp	,	68
+	jr	$ra
+	nop
+register_disaster:
+	addi	$sp	,	$sp	,	48
+	sw	$t0	,	-52($sp)
+	sw	$t1	,	-56($sp)
+	sw	$t2	,	-60($sp)
+	sw	$t3	,	-64($sp)
+	sw	$t4	,	-68($sp)
+	sw	$t5	,	-72($sp)
+	sw	$t6	,	-76($sp)
+	sw	$s0	,	-80($sp)
+	sw	$s1	,	-84($sp)
+	sw	$s2	,	-88($sp)
+	sw	$s3	,	-92($sp)
+	sw	$s4	,	-96($sp)
+	sw	$s5	,	-100($sp)
+	sw	$s6	,	-104($sp)
+	sw	$fp	,	-108($sp)
+	sw	$ra	,	-112($sp)
+	add	$fp	,	$sp	,	$zero
+	addi	$sp	,	$sp	,	-116
+	li	$t7	,	1
+	sw	$t7	,	0($fp)
+	li	$t7	,	1
+	sw	$t7	,	-4($fp)
+	li	$t7	,	1
+	sw	$t7	,	-8($fp)
+	li	$t7	,	1
+	sw	$t7	,	-12($fp)
+	li	$t7	,	1
+	sw	$t7	,	-16($fp)
+	li	$t7	,	1
+	sw	$t7	,	-20($fp)
+	li	$t7	,	1
+	sw	$t7	,	-24($fp)
+	li	$t7	,	1
+	sw	$t7	,	-28($fp)
+	li	$t7	,	1
+	sw	$t7	,	-32($fp)
+	li	$t7	,	1
+	sw	$t7	,	-36($fp)
+	li	$t7	,	1
+	sw	$t7	,	-40($fp)
+	li	$t7	,	1
+	sw	$t7	,	-44($fp)
+	lw	$t9	,	0($fp)
+	lw	$t8	,	-4($fp)
+	add	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	lw	$t8	,	-8($fp)
+	add	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	lw	$t8	,	-12($fp)
+	add	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	lw	$t8	,	-16($fp)
+	add	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	lw	$t8	,	-20($fp)
+	add	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	lw	$t8	,	-24($fp)
+	add	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	lw	$t8	,	-28($fp)
+	add	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	lw	$t8	,	-32($fp)
+	add	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	lw	$t8	,	-36($fp)
+	add	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	lw	$t8	,	-40($fp)
+	add	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	lw	$t8	,	-44($fp)
+	add	$v0	,	$t9	,	$t8
+	j	register_disaster$end
+	nop
+register_disaster$end:
+	lw	$ra	,	4($sp)
+	lw	$fp	,	8($sp)
+	lw	$s6	,	12($sp)
+	lw	$s5	,	16($sp)
+	lw	$s4	,	20($sp)
+	lw	$s3	,	24($sp)
+	lw	$s2	,	28($sp)
+	lw	$s1	,	32($sp)
+	lw	$s0	,	36($sp)
+	lw	$t6	,	40($sp)
+	lw	$t5	,	44($sp)
+	lw	$t4	,	48($sp)
+	lw	$t3	,	52($sp)
+	lw	$t2	,	56($sp)
+	lw	$t1	,	60($sp)
+	lw	$t0	,	64($sp)
+	addi	$sp	,	$sp	,	116
+	jr	$ra
+	nop
+warning:
+	sw	$t0	,	0($sp)
+	sw	$t1	,	-4($sp)
+	sw	$t2	,	-8($sp)
+	sw	$t3	,	-12($sp)
+	sw	$t4	,	-16($sp)
+	sw	$t5	,	-20($sp)
+	sw	$t6	,	-24($sp)
+	sw	$s0	,	-28($sp)
+	sw	$s1	,	-32($sp)
+	sw	$s2	,	-36($sp)
+	sw	$s3	,	-40($sp)
+	sw	$s4	,	-44($sp)
+	sw	$s5	,	-48($sp)
+	sw	$s6	,	-52($sp)
+	sw	$fp	,	-56($sp)
+	sw	$ra	,	-60($sp)
+	add	$fp	,	$sp	,	$zero
+	addi	$sp	,	$sp	,	-64
+warning$end:
+	lw	$ra	,	4($sp)
+	lw	$fp	,	8($sp)
+	lw	$s6	,	12($sp)
+	lw	$s5	,	16($sp)
+	lw	$s4	,	20($sp)
+	lw	$s3	,	24($sp)
+	lw	$s2	,	28($sp)
+	lw	$s1	,	32($sp)
+	lw	$s0	,	36($sp)
+	lw	$t6	,	40($sp)
+	lw	$t5	,	44($sp)
+	lw	$t4	,	48($sp)
+	lw	$t3	,	52($sp)
+	lw	$t2	,	56($sp)
+	lw	$t1	,	60($sp)
+	lw	$t0	,	64($sp)
+	addi	$sp	,	$sp	,	64
+	jr	$ra
+	nop
+test:
+	sw	$t0	,	-60($sp)
+	sw	$t1	,	-64($sp)
+	sw	$t2	,	-68($sp)
+	sw	$t3	,	-72($sp)
+	sw	$t4	,	-76($sp)
+	sw	$t5	,	-80($sp)
+	sw	$t6	,	-84($sp)
+	sw	$s0	,	-88($sp)
+	sw	$s1	,	-92($sp)
+	sw	$s2	,	-96($sp)
+	sw	$s3	,	-100($sp)
+	sw	$s4	,	-104($sp)
+	sw	$s5	,	-108($sp)
+	sw	$s6	,	-112($sp)
+	sw	$fp	,	-116($sp)
+	sw	$ra	,	-120($sp)
+	add	$fp	,	$sp	,	$zero
+	addi	$sp	,	$sp	,	-124
+	li	$t7	,	10
+	sw	$t7	,	-24($fp)
+$label17:
+	lw	$t9	,	-24($fp)
+	subi	$t7	,	$t9	,	0
+	bltz	$t7	,	$label18
+	nop
+	lw	$t9	,	-24($fp)
+	subi	$t7	,	$t9	,	5
+	bltz	$t7	,	$label19
+	nop
+	li	$t7	,	10
+	sw	$t7	,	-28($fp)
+	lw	$t9	,	-28($fp)
+	lw	$t8	,	-24($fp)
+	bne	$t9	,	$t8	,	$label22
+	nop
+	li	$t7	,	65
+	sw	$t7	,	-4($fp)
+	j	$label21
+	nop
+$label22:
+	li	$t7	,	9
+	sw	$t7	,	-32($fp)
+	lw	$t9	,	-32($fp)
+	lw	$t8	,	-24($fp)
+	bne	$t9	,	$t8	,	$label23
+	nop
+	li	$t7	,	66
+	sw	$t7	,	-4($fp)
+	j	$label21
+	nop
+$label23:
+	li	$t7	,	8
+	sw	$t7	,	-36($fp)
+	lw	$t9	,	-36($fp)
+	lw	$t8	,	-24($fp)
+	bne	$t9	,	$t8	,	$label24
+	nop
+	li	$t7	,	67
+	sw	$t7	,	-4($fp)
+	j	$label21
+	nop
+$label24:
+	li	$t7	,	7
+	sw	$t7	,	-40($fp)
+	lw	$t9	,	-40($fp)
+	lw	$t8	,	-24($fp)
+	bne	$t9	,	$t8	,	$label25
+	nop
+	li	$t7	,	68
+	sw	$t7	,	-4($fp)
+	j	$label21
+	nop
+$label25:
+	li	$t7	,	6
+	sw	$t7	,	-44($fp)
+	lw	$t9	,	-44($fp)
+	lw	$t8	,	-24($fp)
+	bne	$t9	,	$t8	,	$label26
+	nop
+	li	$t7	,	69
+	sw	$t7	,	-4($fp)
+	j	$label21
+	nop
+$label26:
+	li	$t7	,	70
+	sw	$t7	,	-4($fp)
+$label21:
+	j	$label20
+	nop
+$label19:
+	li	$t9	,	2
+	lw	$t8	,	-24($fp)
+	mul	$t7	,	$t9	,	$t8
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	li	$t8	,	2
+	div	$t9	,	$t8
+	mflo	$t7
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	addi	$t7	,	$t9	,	48
+	sw	$t7	,	-48($fp)
+	lw	$t9	,	-48($fp)
+	subi	$t7	,	$t9	,	0
+	sw	$t7	,	-48($fp)
+	li	$t7	,	0
+	sw	$t7	,	-52($fp)
+	lw	$t9	,	-52($fp)
+	lw	$t8	,	-48($fp)
+	bne	$t9	,	$t8	,	$label28
+	nop
+	li	$t7	,	65
+	sw	$t7	,	-4($fp)
+	j	$label27
+	nop
+$label28:
+	li	$t7	,	71
+	sw	$t7	,	-4($fp)
+$label27:
+$label20:
+	lw	$t9	,	-24($fp)
+	subi	$t7	,	$t9	,	1
+	sw	$t7	,	-24($fp)
+	j	$label17
+	nop
+$label18:
+	lw	$t7	,	-4($fp)
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	jal	output
+	nop
+	li	$t7	,	4
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	jal	error
+	nop
+test$end:
+	lw	$ra	,	4($sp)
+	lw	$fp	,	8($sp)
+	lw	$s6	,	12($sp)
+	lw	$s5	,	16($sp)
+	lw	$s4	,	20($sp)
+	lw	$s3	,	24($sp)
+	lw	$s2	,	28($sp)
+	lw	$s1	,	32($sp)
+	lw	$s0	,	36($sp)
+	lw	$t6	,	40($sp)
+	lw	$t5	,	44($sp)
+	lw	$t4	,	48($sp)
+	lw	$t3	,	52($sp)
+	lw	$t2	,	56($sp)
+	lw	$t1	,	60($sp)
+	lw	$t0	,	64($sp)
+	addi	$sp	,	$sp	,	124
+	jr	$ra
+	nop
+main:
+	sw	$t0	,	-856($sp)
+	sw	$t1	,	-860($sp)
+	sw	$t2	,	-864($sp)
+	sw	$t3	,	-868($sp)
+	sw	$t4	,	-872($sp)
+	sw	$t5	,	-876($sp)
+	sw	$t6	,	-880($sp)
+	sw	$s0	,	-884($sp)
+	sw	$s1	,	-888($sp)
+	sw	$s2	,	-892($sp)
+	sw	$s3	,	-896($sp)
+	sw	$s4	,	-900($sp)
+	sw	$s5	,	-904($sp)
+	sw	$s6	,	-908($sp)
+	sw	$fp	,	-912($sp)
+	sw	$ra	,	-916($sp)
+	add	$fp	,	$sp	,	$zero
+	addi	$sp	,	$sp	,	-920
+	li	$t7	,	1
+	sw	$t7	,	32($gp)
+	li	$t7	,	2
+	sw	$t7	,	36($gp)
+	li	$t7	,	48
+	sw	$t7	,	84($gp)
+	li	$t7	,	49
+	sw	$t7	,	88($gp)
+	li	$t7	,	50
+	sw	$t7	,	92($gp)
+	li	$v0	,	4
+	la	$a0	,	$Message5
+	syscall
+	li	$v0	,	5
+	syscall
+	add	$t7	,	$v0	,	$zero
+	sw	$t7	,	0($fp)
+	li	$v0	,	5
+	syscall
+	add	$t7	,	$v0	,	$zero
+	sw	$t7	,	-4($fp)
+	li	$v0	,	4
+	la	$a0	,	$Message6
+	syscall
+	li	$v0	,	12
+	syscall
+	add	$t7	,	$v0	,	$zero
+	sw	$t7	,	-8($fp)
+	li	$t7	,	0
+	sw	$t7	,	28($gp)
+$label29:
+	beq	$zero	,	$zero	,	$label30
+	nop
+	lw	$t9	,	28($gp)
+	li	$t8	,	1
+	mul	$t7	,	$t9	,	$t8
+	sw	$t7	,	-816($fp)
+	lw	$t9	,	-816($fp)
+	subi	$t7	,	$t9	,	1
+	sw	$t7	,	-816($fp)
+	lw	$t9	,	-816($fp)
+	addi	$t7	,	$t9	,	1
+	sw	$t7	,	-816($fp)
+	lw	$t7	,	0($fp)
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	lw	$t7	,	-4($fp)
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	jal	cumulative_sum
+	nop
+	addi	$t7	,	$v0	,	0
+	sw	$t7	,	-820($fp)
+	lw	$t8	,	-816($fp)
+	addi	$t7	,	$t8	,	4
+	sll	$t7	,	$t7	,	2
+	lw	$t9	,	-820($fp)
+	sub	$t7	,	$fp	,	$t7
+	sw	$t9	,	0($t7)
+	j	$label29
+	nop
+$label30:
+	li	$t7	,	1
+	sw	$t7	,	28($gp)
+$label31:
+	lw	$t9	,	-4($fp)
+	lw	$t8	,	0($fp)
+	sub	$t7	,	$t9	,	$t8
+	sw	$t7	,	-824($fp)
+	lw	$t9	,	28($gp)
+	lw	$t8	,	-824($fp)
+	sub	$t7	,	$t9	,	$t8
+	bgez	$t7	,	$label32
+	nop
+	lw	$t8	,	28($gp)
+	addi	$t7	,	$t8	,	4
+	sll	$t7	,	$t7	,	2
+	lw	$t9	,	28($gp)
+	sub	$t7	,	$fp	,	$t7
+	sw	$t9	,	0($t7)
+	lw	$t9	,	28($gp)
+	addi	$t7	,	$t9	,	1
+	sw	$t7	,	28($gp)
+	j	$label31
+	nop
+$label32:
+	li	$t7	,	1
+	sw	$t7	,	28($gp)
+	lw	$t9	,	0($fp)
+	subi	$t7	,	$t9	,	-100
+	bltz	$t7	,	$label33
+	nop
+	lw	$t9	,	-4($fp)
+	subi	$t7	,	$t9	,	100
+	bgtz	$t7	,	$label35
+	nop
+	lw	$t9	,	0($fp)
+	lw	$t8	,	-4($fp)
+	sub	$t7	,	$t9	,	$t8
+	bgtz	$t7	,	$label37
+	nop
+	addi	$t9	,	$zero	,	4
+	sll	$t9	,	$t9	,	2
+	sub	$t9	,	$fp	,	$t9
+	lw	$t7	,	0($t9)
+	sw	$t7	,	-832($fp)
+	li	$v0	,	4
+	la	$a0	,	$Message7
+	syscall
+	li	$v0	,	1
+	lw	$t7	,	-832($fp)
+	add	$a0	,	$t7	,	$zero
+	syscall
+	j	$label38
+	nop
+$label37:
+$label38:
+	j	$label36
+	nop
+$label35:
+$label36:
+	j	$label34
+	nop
+$label33:
+$label34:
+	jal	returnyear
+	nop
+	addi	$t7	,	$v0	,	0
+	sw	$t7	,	-836($fp)
+	li	$v0	,	4
+	la	$a0	,	$Message8
+	syscall
+	li	$v0	,	1
+	lw	$t7	,	-836($fp)
+	add	$a0	,	$t7	,	$zero
+	syscall
+	lw	$t7	,	-8($fp)
+	sw	$t7	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	jal	output
+	nop
+	addi	$t7	,	$v0	,	0
+	sw	$t7	,	-12($fp)
+	lw	$t9	,	-12($fp)
+	li	$t8	,	99
+	bne	$t9	,	$t8	,	$label39
+	nop
+	li	$v0	,	4
+	la	$a0	,	$Message9
+	syscall
+	li	$v0	,	1
+	lw	$t7	,	32($gp)
+	add	$a0	,	$t7	,	$zero
+	syscall
+	j	$label40
+	nop
+$label39:
+	li	$v0	,	4
+	la	$a0	,	$Message10
+	syscall
+	li	$v0	,	1
+	lw	$t7	,	36($gp)
+	add	$a0	,	$t7	,	$zero
+	syscall
+$label40:
+	jal	returnc
+	nop
+	addi	$t7	,	$v0	,	0
+	sw	$t7	,	-12($fp)
+	lw	$t9	,	-12($fp)
+	addi	$t7	,	$t9	,	0
+	sw	$t7	,	-848($fp)
+	lw	$t9	,	-848($fp)
+	li	$t8	,	67
+	bne	$t9	,	$t8	,	$label41
+	nop
+	li	$v0	,	4
+	la	$a0	,	$Message11
+	syscall
+	j	$label42
+	nop
+$label41:
+	li	$v0	,	4
+	la	$a0	,	$Message12
+	syscall
+$label42:
+	jal	warning
+	nop
+	jal	test
+	nop
+	li	$v0	,	4
+	la	$a0	,	$Message13
+	syscall
+	li	$v0	,	1
+	lw	$t7	,	28($gp)
+	add	$a0	,	$t7	,	$zero
+	syscall
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	sw	$zero	,	0($sp)
+	addi	$sp	,	$sp	,	-4
+	jal	register_disaster
+	nop
+	addi	$t7	,	$v0	,	0
+	sw	$t7	,	-852($fp)
+	li	$v0	,	4
+	la	$a0	,	$Message14
+	syscall
+	li	$v0	,	1
+	lw	$t7	,	-852($fp)
+	add	$a0	,	$t7	,	$zero
+	syscall
+	li	$v0	,	10
+	syscall

@@ -1,0 +1,38 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="C0_Compiler/token_define.h">
+    <Files>
+      <File FileName="C0_Compiler/C0_Compiler.cpp" Line="1" Column="1" />
+      <File FileName="C0_Compiler/C0_Compiler.h" Line="1" Column="1" />
+      <File FileName="C0_Compiler/error_define.h" Line="1" Column="1" />
+      <File FileName="C0_Compiler/grammar_analysis.cpp" Line="1" Column="1" />
+      <File FileName="C0_Compiler/main.cpp" Line="1" Column="1" />
+      <File FileName="C0_Compiler/mid_code.cpp" Line="1" Column="1" />
+      <File FileName="C0_Compiler/mid_code.h" Line="1" Column="1" />
+      <File FileName="C0_Compiler/object_code.cpp" Line="1" Column="1" />
+      <File FileName="C0_Compiler/object_code.h" Line="1" Column="1" />
+      <File FileName="C0_Compiler/optimize_code.cpp" Line="1" Column="1" />
+      <File FileName="C0_Compiler/optimize_code.h" Line="1" Column="1" />
+      <File FileName="C0_Compiler/symbol_table.cpp" Line="1" Column="1" />
+      <File FileName="C0_Compiler/symbol_table.h" Line="1" Column="1" />
+      <File FileName="C0_Compiler/token_analysis.cpp" Line="1" Column="1" />
+      <File FileName="C0_Compiler/token_define.h" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="C0_Compiler" expanded="True">
+            <Node name="C0_Compiler" expanded="True">
+              <Node name="token_define.h" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x64" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

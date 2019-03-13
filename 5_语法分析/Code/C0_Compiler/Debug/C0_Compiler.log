@@ -1,0 +1,9 @@
+﻿  grammar_analysis.cpp
+c:\compiler\c0_compiler\c0_compiler\grammar_analysis.cpp(13): warning C4101: “temp_sym_type”: 未引用的局部变量
+c:\compiler\c0_compiler\c0_compiler\grammar_analysis.cpp(12): warning C4101: “temp_ret_type”: 未引用的局部变量
+  main.cpp
+  symbol_table.cpp
+  token_analysis.cpp
+c:\compiler\c0_compiler\c0_compiler\token_analysis.cpp(423): warning C4101: “temp”: 未引用的局部变量
+  正在生成代码...
+  C0_Compiler.vcxproj -> C:\Compiler\C0_Compiler\Debug\C0_Compiler.exe

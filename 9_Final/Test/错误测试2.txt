@@ -1,0 +1,10 @@
+int test = 2;
+
+void non_retrun{
+	return 2;
+}
+
+void main(){
+	int a;
+	a = non_return;
+}
